@@ -1,16 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Taejun Yoon, M.D.</title>
+    <style>
+        /* 전체적인 디자인 설정 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        /* 프로필 섹션 */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        /* 섹션 구분 */
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        /* 리스트 스타일 */
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        /* 링크 스타일 */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* 버튼 스타일 */
+        .btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #34495e;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>James Taejun Yoon, M.D.</h1>
-    <p>Physician-Scientist | Aspiring Computational Biologist</p>
-    <p>Research Interests: Hematologic Malignancies, Pathogen Genomics</p>
-    <hr>
-    <h3>Contact</h3>
-    <ul>
-        <li>Email: <a href="mailto:james9704@korea.ac.kr">james9704@korea.ac.kr</a></li>
-    </ul>
+
+    <header>
+        <h1>James Taejun Yoon, M.D.</h1>
+        <p class="subtitle">Physician-Scientist | Aspiring Computational Biologist</p>
+        <p>Current: ROK Air Force (Medical Officer)</p>
+        <a href="mailto:james9704@korea.ac.kr" class="btn">Contact Me</a>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Welcome. I am a medical doctor and researcher serving in the Republic of Korea Air Force. 
+            My goal is to bridge the gap between clinical medicine and computational biology.
+            I am currently preparing for a Ph.D. in Computational Biology & Bioinformatics.
+        </p>
+    </section>
+
+    <section>
+        <h2>Research Interests</h2>
+        <ul>
+            <li><strong>Pathogen Genomics:</strong> Analyzing genomic data to understand infectious diseases.</li>
+            <li><strong>Hematologic Malignancies:</strong> Researching blood cancers through computational methods.</li>
+            <li><strong>Aging:</strong> Studying biological mechanisms of aging.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Education & Experience</h2>
+        <ul>
+            <li><strong>M.D.</strong> - Korea University College of Medicine (2024)</li>
+            <li><strong>Military Service</strong> - ROK Air Force (Discharge: Nov 2026)</li>
+        </ul>
+    </section>
+
+    <footer style="text-align: center; margin-top: 50px; color: #aaa; font-size: 0.8em;">
+        &copy; 2026 James Taejun Yoon. All rights reserved.
+    </footer>
+
 </body>
 </html>
