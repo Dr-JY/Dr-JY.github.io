@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | James Taejun Yoon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+    <style>
+        /* index.html과 같은 스타일을 씁니다 (나중에는 css파일 하나로 합치는게 좋습니다) */
+        :root { --primary: #2563eb; --text: #1e293b; --bg: #f8fafc; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        nav { background: white; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; }
+        .nav-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; text-decoration: none; color: var(--text); font-size: 1.2em; }
+        .menu a { margin-left: 20px; text-decoration: none; color: #64748b; font-weight: 500; }
+        .menu a:hover, .menu a.active { color: var(--primary); }
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        
+        /* 카드 스타일 */
+        .card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 25px; }
+        .role { color: var(--primary); font-weight: bold; font-size: 1.1em; }
+        .date { float: right; color: #94a3b8; font-family: monospace; }
+        .skills span { background: #e0f2fe; color: #0284c7; padding: 3px 10px; border-radius: 15px; font-size: 0.85em; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Dr. Yoon</a>
+            <div class="menu">
+                <a href="index.html">About</a>
+                <a href="research.html" class="active">Research</a>
+                <a href="publications.html">Publications</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="border-bottom: 3px solid var(--primary); display: inline-block; padding-bottom: 5px;">Research Experience</h2>
+
+        <div class="card">
+            <span class="date">2024 - 2025</span>
+            <h3>Dana-Farber Cancer Institute (DFCI)</h3>
+            <p class="role">External Post-doctoral Research Fellow</p>
+            <p><em>Advisor: Inhye E. Ahn, M.D. (Dept. of Medical Oncology)</em></p>
+            <ul>
+                <li><strong>Project 1:</strong> Genomic analysis of Double Refractory/Exposed CLL patients.</li>
+                <li><strong>Project 2:</strong> Clinical outcomes of BTK inhibitor therapy cessation.</li>
+            </ul>
+            <div class="skills">
+                <span>R</span> <span>Python</span> <span>Genomics</span> <span>CLL</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="date">2020 - 2021</span>
+            <h3>Korea University College of Medicine</h3>
+            <p class="role">Student Researcher</p>
+            <p><em>Advisor: Jae-Myeong Lee, M.D., Ph.D.</em></p>
+            <p>Analyzed age-related differences in body composition using bioelectrical impedance analysis data.</p>
+            <div class="skills">
+                <span>Statistical Analysis</span> <span>Clinical Data</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
