@@ -4,165 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Taejun Yoon, M.D.</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+    
     <style>
-        /* 기본 스타일 설정 */
+        /* --- 기본 설정 --- */
+        :root {
+            --primary-color: #2563eb; /* 신뢰감을 주는 로얄 블루 */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 900px; /* 폭을 조금 더 넓혔습니다 */
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f6f9;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
         }
-        
-        /* 헤더 스타일 */
+
+        /* --- 네비게이션 바 --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .nav-logo {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-sub);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- 메인 컨텐츠 영역 --- */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* --- 헤더 섹션 (이름 & 소개) --- */
         header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left; /* 왼쪽 정렬로 모던하게 변경 */
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
             margin-bottom: 40px;
         }
-        h1 { margin: 0; color: #2c3e50; font-size: 2.5em; }
-        .subtitle { color: #7f8c8d; font-size: 1.2em; margin-top: 10px; }
-        .contact-info { margin-top: 20px; font-size: 0.95em; }
-        .contact-info a { margin: 0 10px; color: #3498db; text-decoration: none; }
-        .contact-info i { margin-right: 5px; }
-
-        /* 섹션 스타일 */
-        section {
+        h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            color: var(--text-sub);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 8px 16px;
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* --- 섹션 공통 --- */
+        section {
+            margin-bottom: 60px;
         }
         h2 {
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            color: #2c3e50;
-            margin-top: 0;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
         }
-        h3 { margin-bottom: 5px; color: #34495e; }
-        .date { float: right; color: #888; font-size: 0.9em; }
-        
-        /* 리스트 및 아이템 스타일 */
-        .experience-item, .publication-item { margin-bottom: 25px; }
-        .publication-item { padding-left: 15px; border-left: 3px solid #eee; }
-        ul.skills-list { list-style: none; padding: 0; }
-        ul.skills-list li { display: inline-block; background: #eef2f7; padding: 5px 15px; border-radius: 20px; margin: 5px 5px 5px 0; font-size: 0.9em; }
-        
-        /* 모바일 대응 */
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* --- 카드 디자인 (경력, 논문) --- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .card-date {
+            font-size: 0.9em;
+            color: var(--text-sub);
+            font-family: monospace; /* 날짜는 고정폭 글꼴로 */
+        }
+        .card-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- 뱃지 스타일 (기술 스택, 태그) --- */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-right: 5px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-tech { background: #e0f2fe; color: #0284c7; }
+        .badge-award { background: #fef3c7; color: #d97706; }
+        .badge-tag { background: #f1f5f9; color: #475569; margin-top: 10px;}
+
+        /* --- 모바일 대응 --- */
         @media (max-width: 600px) {
-            .date { float: none; display: block; margin-bottom: 5px; }
-            header { padding: 40px 15px; }
-            section { padding: 25px; }
+            h1 { font-size: 2.2em; }
+            .card-header { flex-direction: column; }
+            .nav-links { display: none; } /* 모바일에서는 메뉴 숨김 (심플하게) */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>James Taejun Yoon, M.D.</h1>
-        <p class="subtitle">Physician-Scientist | Aspiring Computational Biologist</p>
-        <div class="contact-info">
-            <a href="mailto:james9704@korea.ac.kr"><i class="fas fa-envelope"></i> james9704@korea.ac.kr</a>
-            <a href="https://github.com/Dr-JY" target="_blank"><i class="fab fa-github"></i> github.com/Dr-JY</a>
-            <span><i class="fas fa-map-marker-alt"></i> Republic of Korea</span>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Dr. Yoon</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am a medical doctor and researcher currently serving as a Medic in the ROK Air Force (Armed Forces Capital Hospital)[cite: 46, 47]. 
-            I graduated from Korea University College of Medicine in 2024[cite: 4].
-            My research interests lie at the intersection of clinical medicine and computational biology, with a focus on <strong>Hematologic Malignancies, Pathogen Genomics, and Aging</strong>[cite: 9, 14].
-            I am experienced in genomic data analysis using R and Python[cite: 32].
-        </p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="experience-item">
-            <span class="date">Feb 2024</span>
-            <h3>Korea University College of Medicine</h3>
-            <p><strong>M.D. (Doctor of Medicine)</strong> | Seoul, Republic of Korea [cite: 4, 5]</p>
-            <ul>
-                <li>KUMC-spirit Scholarship (2019) [cite: 27]</li>
-                <li>Chung-Yang Physiology Award (2020) [cite: 26]</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Research Experience</h2>
-        <div class="experience-item">
-            <span class="date">2024 - 2025</span>
-            <h3>Dana-Farber Cancer Institute (DFCI)</h3>
-            <p><strong>External Post-doctoral Research Fellow</strong> | Boston, MA, USA [cite: 7]</p>
-            <p><em>Advisor: Inhye E. Ahn, M.D. (Dept. of Medical Oncology)</em> [cite: 8]</p>
-            <ul>
-                <li>Conducted genomic data analysis on patients with double refractory/exposed Chronic Lymphocytic Leukemia (CLL)[cite: 9].</li>
-                <li>Investigated clinical outcomes of BTK inhibitor therapy cessation[cite: 11].</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <span class="date">2020 - 2021</span>
-            <h3>Korea University College of Medicine</h3>
-            <p><strong>Student Researcher</strong> | Seoul, Republic of Korea [cite: 12]</p>
-            <p><em>Advisor: Jae-Myeong Lee, M.D., Ph.D. (Dept. of Surgery)</em> [cite: 13]</p>
-            <ul>
-                <li>Analyzed age-related differences in body composition using bioelectrical impedance analysis[cite: 14].</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Selected Publications</h2>
+    <div class="container">
         
-        <div class="publication-item">
-            <strong>Yoon, J.T.</strong>, et al. "Characteristics and outcomes of patients with double refractory and double exposed chronic lymphocytic leukemia." 
-            <br><em>Blood Advances</em>, 9(11), 2808-2817 (2025). <a href="https://doi.org/10.1182/bloodadvances.2025016006" target="_blank">[DOI]</a> [cite: 16, 17]
-        </div>
-
-        <div class="publication-item">
-            <strong>Yoon, J.T.</strong>, et al. "Characteristics and Outcomes of Patients with Double Refractory or Double Exposed Chronic Lymphocytic Leukemia."
-            <br><em>ASH Annual Meeting</em> (Poster Presentation), 2024. 
-            <br><span style="color:#e74c3c; font-size:0.9em;">🏆 ASH Abstract Achievement Award</span> [cite: 18, 19, 25]
-        </div>
-
-        <div class="publication-item">
-            <strong>Yoon, J.T.</strong>, et al. "Extended Abstract: BTKi Therapy Can Be Stopped In CLL."
-            <br><em>SOHO Annual Meeting</em> (Extended Abstract), 2024. [cite: 20, 21]
-        </div>
-    </section>
-
-    <section>
-        <h2>Technical Skills & Certifications</h2>
-        <ul class="skills-list">
-            <li>Programming: R, Python [cite: 32]</li>
-            <li>Data Analysis: ADsP (Advanced Data Analytics Semi-Professional) [cite: 30]</li>
-            <li>Medical License (Republic of Korea, 2024) [cite: 29]</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Leadership & Service</h2>
-        <ul>
-            <li><strong>Medical Volunteer</strong>, Raphael Clinic for migrant workers (2018-2023) [cite: 39]</li>
-            <li><strong>President</strong>, Korea Univ. Christian Medical Fellowship (2022) [cite: 41]</li>
-            <li><strong>Medical Volunteer</strong>, Sisters of Mary School, Cebu, Philippines (2019) [cite: 42]</li>
-        </ul>
-    </section>
-
-    <footer style="text-align: center; margin-top: 50px; color: #aaa; font-size: 0.8em;">
-        &copy; 2026 James Taejun Yoon. Hosted on GitHub Pages.
-    </footer>
-
-</body>
-</html>
+        <header id="about">
+            <h1>James Taejun Yoon, M.D.</h1>
+            <p class="subtitle">
+                Physician-Scientist | Aspiring Computational Biologist<br>
+                <span style="font-size: 0.7em; color: #64748b;">Current: ROK Air Force Medical Officer</span>
+            </p>
+            <div class="social-links">
+                <a href="mailto:james9704@korea.ac.kr"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://github.com/Dr-JY" target="_blank"><i class="fab fa-github"></i> GitHub</a>
