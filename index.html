@@ -3,210 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Taejun Yoon, M.D.</title>
+    <title>James Taejun Yoon | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
     
     <style>
-        /* --- 기본 설정 --- */
-        :root {
-            --primary-color: #2563eb; /* 신뢰감을 주는 로얄 블루 */
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-sub: #64748b;
-        }
+        /* 공통 스타일 (나중에 style.css로 뺄 수도 있습니다) */
+        :root { --primary: #2563eb; --text: #1e293b; --bg: #f8fafc; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        
+        /* 네비게이션 바 */
+        nav { background: white; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; }
+        .nav-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; text-decoration: none; color: var(--text); font-size: 1.2em; }
+        .menu a { margin-left: 20px; text-decoration: none; color: #64748b; font-weight: 500; }
+        .menu a:hover, .menu a.active { color: var(--primary); }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* --- 네비게이션 바 --- */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            padding: 15px 0;
-        }
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .nav-logo {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--text-sub);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- 메인 컨텐츠 영역 --- */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* --- 헤더 섹션 (이름 & 소개) --- */
-        header {
-            text-align: left; /* 왼쪽 정렬로 모던하게 변경 */
-            padding: 60px 0;
-            border-bottom: 1px solid #e2e8f0;
-            margin-bottom: 40px;
-        }
-        h1 {
-            font-size: 3em;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.02em;
-            color: #0f172a;
-        }
-        .subtitle {
-            font-size: 1.5em;
-            color: var(--text-sub);
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            margin-right: 15px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-        .social-links a:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* --- 섹션 공통 --- */
-        section {
-            margin-bottom: 60px;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 40px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        /* --- 카드 디자인 (경력, 논문) --- */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--primary-color);
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
-        }
-        .card-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .card-date {
-            font-size: 0.9em;
-            color: var(--text-sub);
-            font-family: monospace; /* 날짜는 고정폭 글꼴로 */
-        }
-        .card-subtitle {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* --- 뱃지 스타일 (기술 스택, 태그) --- */
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            margin-right: 5px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-        .badge-tech { background: #e0f2fe; color: #0284c7; }
-        .badge-award { background: #fef3c7; color: #d97706; }
-        .badge-tag { background: #f1f5f9; color: #475569; margin-top: 10px;}
-
-        /* --- 모바일 대응 --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2em; }
-            .card-header { flex-direction: column; }
-            .nav-links { display: none; } /* 모바일에서는 메뉴 숨김 (심플하게) */
-        }
+        /* 메인 컨텐츠 */
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        h1 { font-size: 3em; margin-bottom: 10px; color: #0f172a; }
+        .subtitle { font-size: 1.5em; color: #64748b; font-weight: 300; margin-bottom: 30px; }
+        
+        .btn { display: inline-block; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .btn:hover { background: #1d4ed8; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Dr. Yoon</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#publications">Publications</a>
-                <a href="#contact">Contact</a>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Dr. Yoon</a>
+            <div class="menu">
+                <a href="index.html" class="active">About</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
+        <h1>James Taejun Yoon, M.D.</h1>
+        <p class="subtitle">
+            Physician-Scientist | Aspiring Computational Biologist<br>
+            <span style="font-size: 0.7em;">Current: ROK Air Force Medical Officer</span>
+        </p>
         
-        <header id="about">
-            <h1>James Taejun Yoon, M.D.</h1>
-            <p class="subtitle">
-                Physician-Scientist | Aspiring Computational Biologist<br>
-                <span style="font-size: 0.7em; color: #64748b;">Current: ROK Air Force Medical Officer</span>
-            </p>
-            <div class="social-links">
-                <a href="mailto:james9704@korea.ac.kr"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://github.com/Dr-JY" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <p style="font-size: 1.2em; max-width: 700px;">
+            Welcome. I am a medical doctor bridging the gap between <strong>Clinical Medicine</strong> and <strong>Genomics</strong>. 
+            My research focuses on <strong>Hematologic Malignancies</strong> (CLL), <strong>Pathogen Genomics</strong>, and <strong>Aging</strong>.
+        </p>
+
+        <div style="margin-top: 30px;">
+            <a href="mailto:james9704@korea.ac.kr" class="btn"><i class="fas fa-envelope"></i> Contact Me</a>
+            <a href="https://github.com/Dr-JY" class="btn" style="background: #333; margin-left: 10px;"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+
+</body>
+</html>
