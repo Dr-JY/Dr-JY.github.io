@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Taejun Yoon | Misc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+    
+    <style>
+        :root { --primary: #2563eb; --text: #1e293b; --bg: #f8fafc; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        
+        nav { background: white; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; }
+        .nav-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; text-decoration: none; color: var(--text); font-size: 1.2em; }
+        .menu a { margin-left: 20px; text-decoration: none; color: #64748b; font-weight: 500; }
+        .menu a:hover, .menu a.active { color: var(--primary); }
+
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        h1 { font-size: 3em; margin-bottom: 10px; color: #0f172a; }
+        .subtitle { font-size: 1.5em; color: #64748b; font-weight: 300; margin-bottom: 40px; }
+        
+        /* Misc 페이지 전용 카드 스타일 */
+        .misc-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-bottom: 20px; border: 1px solid #e2e8f0; }
+        .misc-card h2 { margin-top: 0; color: #0f172a; font-size: 1.5em; }
+        .misc-card p { color: #475569; margin-bottom: 20px; }
+        
+        .btn-outline { display: inline-block; padding: 8px 16px; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Dr. Yoon</a>
+            <div class="menu">
+                <a href="index.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="misc.html" class="active">Misc</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Miscellaneous</h1>
+        <p class="subtitle">Beyond the clinic: Personal logs, reviews, and travels.</p>
+        
+        <div class="misc-card">
+            <h2><i class="fas fa-book-open" style="color: #475569; margin-right: 10px;"></i>Reading & Watch List</h2>
+            <p>A collection of my thoughts on non-fiction books, political dramas, and other works I enjoy in my free time.</p>
+            <a href="https://www.notion.so/Reviews-33f9bc10b586801f9698d0e8ad503cc0?source=copy_link" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                Read Reviews <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.9em;"></i>
+            </a>
+        </div>
+
+        <div class="misc-card">
+            <h2><i class="fas fa-plane-departure" style="color: #475569; margin-right: 10px;"></i>Travel Logs</h2>
+            <p>Memories and itineraries from my journeys (Coming Soon).</p>
+            <span style="color: #94a3b8; font-style: italic;">Update pending...</span>
+        </div>
+    </div>
+
+</body>
+</html>
